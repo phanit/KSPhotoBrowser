@@ -569,8 +569,8 @@ static Class ImageManagerClass = nil;
     if (!image) {
         return;
     }
-    if (_delegate && [_delegate respondsToSelector:@selector(ks_photoBrowser:didLongPressItem:atIndex:)]) {
-        [_delegate ks_photoBrowser:self didLongPressItem:_photoItems[_currentPage] atIndex:_currentPage];
+    if (_delegate && [_delegate respondsToSelector:@selector(ks_photoBrowser:didLongPressItem:andImage:atIndex:)]) {
+        [_delegate ks_photoBrowser:self didLongPressItem:_photoItems[_currentPage] andImage:image atIndex:_currentPage];
         return;
     }
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[image] applicationActivities:nil];
